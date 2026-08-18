@@ -33,6 +33,11 @@
                 </fileset>
             </batchtest>
         </junit>
+         <junitreport todir=".">
+        <fileset dir="." includes="TEST-*.xml"/>
+    </junitreport>
+
+    <copy file="TESTS-TestSuites.xml" tofile="results.xml"/>
     </target>
 
     <target name="main" depends="test">
