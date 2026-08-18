@@ -23,22 +23,18 @@
     </target>
 
     <target name="test" depends="compile">
-        <junit printsummary="yes" haltonfailure="no" fork="yes">
-            <classpath refid="classpath"/>
-            <formatter type="plain"/>
-            <formatter type="xml"/>
-            <batchtest fork="yes" todir="${report.dir}">
-                <fileset dir="${src.dir}">
-                    <include name="**/*Test.java"/>
-                </fileset>
-            </batchtest>
-        </junit>
-         <junitreport todir=".">
-        <fileset dir="." includes="TEST-*.xml"/>
-    </junitreport>
+    <junit printsummary="yes" haltonfailure="no" fork="yes">
+        <classpath refid="classpath"/>
+        <formatter type="xml"/>
+        <batchtest fork="yes" todir=".">
+            <fileset dir="${src.dir}">
+                <include name="**/*Test.java"/>
+            </fileset>
+        </batchtest>
+    </junit>
 
-    <copy file="TESTS-TestSuites.xml" tofile="results.xml"/>
-    </target>
+    <copy file="TEST-SampleWorkflowTest.xml" tofile="results.xml"/>
+</target>
 
     <target name="main" depends="test">
         <echo message="Build complete."/>
