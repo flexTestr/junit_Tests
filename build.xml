@@ -22,18 +22,14 @@
         </javac>
     </target>
 
-    <target name="test" depends="compile">
+<target name="test" depends="compile">
     <junit printsummary="yes" haltonfailure="no" fork="yes">
         <classpath refid="classpath"/>
         <formatter type="xml"/>
-        <batchtest fork="yes" todir=".">
-            <fileset dir="${src.dir}">
-                <include name="**/*Test.java"/>
-            </fileset>
-        </batchtest>
+        <test name="SampleWorkflowTest" todir="."/>
     </junit>
 
-    <copy file="SampleWorkflowTest.xml" tofile="results.xml"/>
+    <copy file="TEST-SampleWorkflowTest.xml" tofile="results.xml"/>
 </target>
 
     <target name="main" depends="test">
