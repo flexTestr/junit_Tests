@@ -33,7 +33,7 @@
         </batchtest>
     </junit>
 
-    <copy file="TEST-SampleWorkflowTest.xml" tofile="results.xml"/>
+    <copy file="SampleWorkflowTest.xml" tofile="results.xml"/>
 </target>
 
     <target name="main" depends="test">
